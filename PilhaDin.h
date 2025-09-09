@@ -60,3 +60,13 @@ typedef struct elemento_ex8 cadeia;
 
 void imprimir_ex8(cadeia *cad);
 void cadeia_shape(char *string);
+
+//ex9
+struct elemento_ex9{
+char num;
+struct elemento_ex9 *prox;
+};
+
+typedef struct elemento_ex9 binomo;
+
+void menu();

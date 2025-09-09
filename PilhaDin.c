@@ -475,7 +475,8 @@ void cadeia_shape(char *string)
 
     n1 = cad;
     n2 = cad_y;
-    while(n1 != NULL && n2 != NULL){
+    while(n1 != NULL && n2 != NULL)
+    {
         if(n1->c != n2->c)
             count++;
 
@@ -488,3 +489,62 @@ void cadeia_shape(char *string)
     else
         printf("a cadeia de string nao eh da forma x C y\n");
 }
+
+/*
+9) Faça um programa que apresente um menu contínuo com as seguintes
+opções e execute de acordo com a escolha do usuário.
+void menu()
+{
+ printf("1-Inicializa pilha.\n");
+ printf("2-Verifica se a pilha e vazia.\n");
+ printf("3-Verifica se a pilha e cheia.\n");
+ printf("4-Empilha o elemento na pilha.\n");
+ printf("5-Desempilha elemento da pilha.\n");
+ printf("6-Le topo de um pilha.\n");
+ printf("7-Converte um numero decimal em binario.\n");
+ printf("8-Sair.\n");
+}
+*/
+
+void menu()
+{
+    printf("1 - Inicializa pilha.\n");
+    printf("2 - Verifica se a pilha e vazia.\n");
+    printf("3 - Verifica se a pilha e cheia.\n");
+    printf("4 - Empilha o elemento na pilha.\n");
+    printf("5 - Desempilha elemento da pilha.\n");
+    printf("6 - Le topo de uma pilha.\n");
+    printf("7 - Converte um numero decimal em binario.\n");
+    printf("8 - Sair.\n");
+    printf("9 - Imprimir Pilha.\n");
+}
+
+
+void decimal_para_binario(int num)
+{
+    if (num == 0)
+    {
+        printf("Binario: 0\n");
+        return;
+    }
+
+    int temp = num;
+    int tamanho = 0;
+    while (temp > 0)
+    {
+        temp /= 2;
+        tamanho++;
+    }
+
+    char bin[tamanho + 1];
+    bin[tamanho] = '\0';
+
+    for (int i = tamanho - 1; i >= 0; i--)
+    {
+        bin[i] = (num % 2) + '0';
+        num /= 2;
+    }
+
+    printf("Binario: %s\n", bin);
+}
+
